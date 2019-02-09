@@ -18,7 +18,7 @@
                 </v-layout>
                 <v-layout row>
                     <v-flex>
-                        <p>{{movie.gender}}
+                        <p>{{movie.gender}} ({{ movie.year }})
                         </p>
                     </v-flex>
                 </v-layout>
