@@ -96,7 +96,7 @@ window.shared_data = {
       id: 5
     },
     {
-      title: "Titre2",
+      title: "quoi",
       year: 1990,
       synopsys: "Synopsys",
       language: "fr",
@@ -118,7 +118,7 @@ window.shared_data = {
       synopsys: "Synopsys",
       language: "fr",
       img: "https://www.affiche-cine.com/images/thumb-357x476/19/423485636241014864511.jpg",
-      gender: "Gender",
+      gender: "Action",
       rating: [],
       director: {
         firstName: "FirstName",
@@ -155,7 +155,7 @@ window.shared_data = {
       gender: "Gender",
       rating: [],
       director: {
-        firstName: "FirstName",
+        firstName: "John",
         lastName: "LastName",
         nationality: "Nationality",
         birthdate: "12/12/12"
@@ -173,7 +173,7 @@ window.shared_data = {
       rating: [],
       director: {
         firstName: "FirstName",
-        lastName: "LastName",
+        lastName: "Eric",
         nationality: "Nationality",
         birthdate: "12/12/12"
       },

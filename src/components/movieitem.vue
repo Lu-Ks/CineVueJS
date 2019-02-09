@@ -77,6 +77,7 @@ export default {
             this.$emit('remove');
         },
         rating: function(){
+            //retourne 0 (a fix)
             console.log(this.rate);
             this.movie.voted = true;
             this.movie.rating.push(this.rate);

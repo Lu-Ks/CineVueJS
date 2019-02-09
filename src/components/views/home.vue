@@ -61,7 +61,21 @@ export default {
 
     computed: {
         movies_search: function() {
-            return this.movies.filter(m => m.title.toLowerCase().indexOf(this.search.toLowerCase())!=-1);
+            return this.movies.filter(m => {
+                if (m.title.toLowerCase().indexOf(this.search.toLowerCase()) != -1) {
+                    return true;
+                }
+                if (m.gender.toLowerCase().indexOf(this.search.toLowerCase()) != -1) {
+                    return true;
+                }
+                if (m.director.firstName.toUpperCase().indexOf(this.search.toUpperCase()) != -1) {
+                    return true;
+                }
+                if (m.director.lastName.toUpperCase().indexOf(this.search.toUpperCase()) != -1) {
+                    return true;
+                }
+            });
+
         }
     }    
 }
