@@ -120,7 +120,6 @@ export default {
             this.movie_to_add.director = this.director;
             this.movies.push(this.movie_to_add)
             this.$router.push({ name: "home" })
-
         }
     },
     computed: {

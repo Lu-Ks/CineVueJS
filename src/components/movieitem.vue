@@ -1,6 +1,8 @@
 <template>
     <v-flex xs3>
-        <v-card class="ma-3">
+        <v-card 
+        class="ma-3"
+        >
             <router-link v-bind:to=" { name: 'show', params: { id: movie.id } } ">
                 <v-img
                 :src="movie.img"
@@ -23,11 +25,12 @@
                     </v-flex>
                 </v-layout>
 
-                <v-layout v-if='!movie.voted' v-on:click="rating" row justify-center>
+                <v-layout v-if='!movie.voted' row justify-center>
                     <v-rating 
+                    v-on:input="rating"
+                    v-model="rate"
                     :half-increments="true"
                     :hover="true"
-                    v-model="rate"
                     ></v-rating>
                 </v-layout>
                 <v-layout v-else row>
@@ -76,11 +79,10 @@ export default {
         remove: function() {
             this.$emit('remove');
         },
-        rating: function(){
-            //retourne 0 (a fix)
-            console.log(this.rate);
+        rating: function(e){
             this.movie.voted = true;
-            this.movie.rating.push(this.rate);
+            this.movie.rating.push(e);
+            this.movie.vote = e;
         }
     },
     computed: {
