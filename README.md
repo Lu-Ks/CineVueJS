@@ -1,6 +1,6 @@
 # README
 
-# CineVueJS with VueJS, Vuetify, VueRouter, webpack
+#### CineVueJS with VueJS, Vuetify, VueRouter, webpack
 
 ## Setup the project
 
