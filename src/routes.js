@@ -9,6 +9,7 @@ import show from './components/views/show.vue'
 Vue.use(Router)
 
 export default new Router({
+  //Liste des routes disponible dans vueJS
   routes: [
     { path: '/', name: "home", component: home },
     { path: '/edit/:id', name: 'edit', component: edit },

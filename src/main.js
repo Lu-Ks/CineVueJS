@@ -8,7 +8,7 @@ import router from './routes.js'
 import MovieItemComponent from './components/movieitem.vue'
 import 'vuetify/dist/vuetify.min.css'
 
-//todo : faire une fonction qui genere des notes
+//Liste des films défini en global
 window.shared_data = {
   movies : [
     {
@@ -98,6 +98,8 @@ window.shared_data = {
     }
   ]
 }
+
+//** @return tableau de 0 a 99 nombre compris entre 0 et 5*/
 function randomNotes(){
   let nbVote = Math.floor(Math.random()*100);
   let votes = [];

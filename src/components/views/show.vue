@@ -104,35 +104,43 @@
 export default {
     data: function() {
         return {
+            //Liste des films de main.js
             movies: window.shared_data.movies,
+            //Valeur de l'element rating en fonction du vote de l'utilisateur
             rate: 0
         }
     },
+    //Affiche le vote de l'utilisateur si il a déjà voté
     created: function () {
         if(this.movie.voted){
             this.rate = this.movie.vote;
         }
     },
     methods: {
+        //Permet a l'utilisateur de voter (une seule fois)
         rating: function(e){
             this.movie.voted = true;
             this.movie.rating.push(e);
             this.movie.vote = e;
         },
+        //Retourne l'utilisateur a la page home
         back: function(){
             this.$router.push({ name: "home" })
         },
+        //Supprime le film et retourne l'utilisateur a la page home
         remove: function(index) {
             this.movies.splice(index, 1)
             this.$router.push({ name: "home" })
         }
     },
     computed: {
+        //Recupere les informations du film en fonction de l'id de l'url
         movie: function() {
             return this.movies.find(obj => {
                 return obj.id == this.$route.params['id'];
             })
         },
+        // Calcule la moyenne des votes du film
         average: function() {
             let value = 0;
             if(this.movie.rating.length > 0){

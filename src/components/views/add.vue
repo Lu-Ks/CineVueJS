@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- Film -->
         <v-layout row justify-center>
             <h1>Ajouter un film</h1>
         </v-layout>
@@ -106,12 +107,16 @@
 export default {
     data: function() {
         return {
+            //Liste des films de main.js
             movies: window.shared_data.movies,
+            //Nouveau film
             movie_to_add: {},
+            //Producteur du nouveau film
             director: {}
         }
     },
     methods: {
+        //Ajoute un film a la liste puis redirige l'utilisateur sur la page Home
         add: function() {
             let id = this.movies[this.movies.length-1].id + 1
             this.movie_to_add.id = id;

@@ -71,14 +71,18 @@
 export default {
     data: function(){
         return {
+            //Vote du film
             rate: 0
         };
     },
+    //Recuperer les valeurs transmise pour afficher un film
     props: ["movie", "movieIndex", "limit"],
     methods: {
+        //Transmet l'event supprimer du film
         remove: function() {
             this.$emit('remove');
         },
+        //Vote pour le film
         rating: function(e){
             this.movie.voted = true;
             this.movie.rating.push(e);
@@ -86,6 +90,7 @@ export default {
         }
     },
     computed: {
+        //Calcule la moyenne du film
         average: function() {
             let value = 0;
             if(this.movie.rating.length > 0){

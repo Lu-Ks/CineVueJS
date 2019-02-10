@@ -1,7 +1,8 @@
 <template>
     <div>
+        <!-- Film -->
         <v-layout row justify-center>
-            <h1>Ajouter un film</h1>
+            <h1>Editer un film</h1>
         </v-layout>
         <v-layout row>        
             <v-flex xs12 ma-3>
@@ -106,15 +107,18 @@
 export default {
     data: function() {
         return {
+            //Liste des films de main.js
             movies: window.shared_data.movies,
         }
     },
     methods: {
+        //Redirige sur la page Home
         back: function(){
             this.$router.push({ name: "home" })
         }
     },
     computed: {
+        //Récupere les informations du film en fonction de l'id de l'url et l'actualise a chaque changement
         movie_to_edit: function() {
             return this.movies.find(obj => {
                 return obj.id == this.$route.params['id'];

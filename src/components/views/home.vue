@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <!-- Zone de recherche -->
         <v-layout row justify-center>
             <v-flex xs12 md8>
                 <v-text-field append-icon="search" label="Rechercher" v-model="search" outline hide-details></v-text-field>
@@ -8,7 +8,7 @@
             </v-flex>
         </v-layout>
 
-
+        <!-- Liste des films -->
         <v-container>
             <p>Nombre de films enregistré : {{movies.length}}</p>
             <v-layout row wrap justify-center>
@@ -29,37 +29,20 @@
 export default {
     data: function(){
         return {
+            //Liste des films de main.js
             movies: window.shared_data.movies,
-            movie_to_add: {},
-            director: {},
-            movie_to_edit: null,
+            //Valeur du champ recherche
             search: ""
         }; 
     },
     methods: {
-        newmovie1: function() {
-            this.movies.push({title:"New movie"})
-        },
-        newmovie2: function() {
-            let id = this.movies[this.movies.length-1].id + 1
-            this.movie_to_add.id = id;
-            this.movie_to_add.director = this.director;
-            this.movies.push(this.movie_to_add)
-
-            this.movie_to_add = {}
-        },
-        save: function() {
-            this.movie_to_edit = null
-        },
+        //Supprime le film correspondant au button
         remove: function(index) {
             this.movies.splice(index, 1)
         }
     },
-    created: function() {
-        console.log("Created")
-    },
-
     computed: {
+        //Permet la recherche en fonction du nom/prenom du producteur, titre, ou genre du film
         movies_search: function() {
             return this.movies.filter(m => {
                 if (m.title.toLowerCase().indexOf(this.search.toLowerCase()) != -1) {
