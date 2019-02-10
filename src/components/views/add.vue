@@ -115,6 +115,8 @@ export default {
         add: function() {
             let id = this.movies[this.movies.length-1].id + 1
             this.movie_to_add.id = id;
+            this.movie_to_add.rating = [];
+            this.movie_to_add.voted = false;
             this.movie_to_add.director = this.director;
             this.movies.push(this.movie_to_add)
             this.$router.push({ name: "home" })
