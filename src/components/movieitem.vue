@@ -6,7 +6,7 @@
             <router-link v-bind:to=" { name: 'show', params: { id: movie.id } } ">
                 <v-img
                 :src="movie.img"
-                aspect-ratio="0.75"
+                aspect-ratio="0.65"
                 >
                 </v-img>
             </router-link>

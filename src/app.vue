@@ -5,6 +5,7 @@
         <v-container>
             <router-view></router-view>
         </v-container>
+        <footer-item></footer-item>
       </v-content>
     </v-app>
 </template>

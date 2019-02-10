@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Vuetify from 'vuetify'
 import app from './app.vue' //fichier app.vue local
 import header from './components/header.vue'
+import footer from './components/footer.vue'
 import router from './routes.js'
 import MovieItemComponent from './components/movieitem.vue'
 import 'vuetify/dist/vuetify.min.css'
@@ -110,6 +111,7 @@ Vue.use(Vuetify)
 Vue.use(VueRouter);
 Vue.component('movie-item', MovieItemComponent);
 Vue.component('header-item', header);
+Vue.component('footer-item', footer);
 
 new Vue({
   el: '#app',
